@@ -155,7 +155,7 @@ class Host(object):
 
     # exist host
     def is_host_exist(self, host_name):
-        result = self._zapi.host.exists({'host': host_name})
+        result = self._zapi.host.get({'filter': {'host': host_name}})
         return result
 
     # check if host group exists
